@@ -1,0 +1,1 @@
+Proposal for makeanything project for Dani AI class
