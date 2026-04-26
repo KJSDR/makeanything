@@ -10,11 +10,28 @@ CLI tool that ingests a log file and returns a structured summary: errors, warni
 
 **Test-first.** Write the test, commit it, then write the implementation. Commit history must show this order.
 
-**Spec before code.** Each feature needs written acceptance criteria (pass/fail conditions) before any implementation starts.
+**Spec before code.** Each feature gets a spec written in `specs/` before any implementation starts. Format:
+```
+## Feature: <name>
+### Accepts
+- <pass condition>
+### Rejects
+- <fail condition>
+```
 
 **Ruff** for linting. Config in `pyproject.toml`. No other linters.
 
 **Iterative refinement.** When output quality changes (prompt tuning, format changes), document the decision in `CHANGELOG.md`.
+
+**Commit consistently.** Small, frequent commits throughout the project — not batched at the end. Graded on commit velocity.
+
+## Custom Commands
+
+Stored in `.claude/commands/`. Add commands for common dev tasks once project is scaffolded (run tests, lint, summarize a sample log).
+
+## Architecture
+
+Data flows `parser.py → summarizer.py → formatter.py`. CLI wires them together. Claude API calls live only in `summarizer.py`.
 
 ## Commands
 
