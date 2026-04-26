@@ -40,7 +40,7 @@ Warnings:     23
 
 ## Requirements Checklist
 
-- [ ] **Project memory** — `CLAUDE.md` with project context, scoped instructions, and custom commands for common dev tasks (run tests, lint, summarize a sample log).
+- [x] **Project memory** — `CLAUDE.md` with project context, scoped instructions, and custom commands for common dev tasks (run tests, lint, summarize a sample log).
 - [ ] **Spec with teeth** — each feature has structured acceptance criteria with specific pass/fail conditions before implementation begins.
 - [ ] **Test-first** — tests are written and committed before the corresponding implementation. Commit history will show this ordering.
 - [ ] **Scoped rules** — linting and style conventions enforced via config (e.g. ESLint or Ruff depending on language choice), with rules tailored to this project's conventions.

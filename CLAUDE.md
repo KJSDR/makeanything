@@ -39,7 +39,7 @@ Data flows `parser.py → summarizer.py → formatter.py`. CLI wires them togeth
 
 ## Course Requirements Tracking
 
-- [ ] **Project memory** — this file
+- [x] **Project memory** — this file
 - [ ] **Spec with teeth** — acceptance criteria before each feature
 - [ ] **Test-first** — tests committed before implementation
 - [ ] **Scoped rules** — ruff config in `pyproject.toml`
