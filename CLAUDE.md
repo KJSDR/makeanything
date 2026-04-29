@@ -35,14 +35,16 @@ Data flows `parser.py → summarizer.py → formatter.py`. CLI wires them togeth
 
 ## Commands
 
-> To be filled in once project is scaffolded and approved.
+- `/run-tests` — run full pytest suite with verbose output
+- `/lint` — ruff check on `loglens/` and `tests/`
+- `/summarize-sample` — run LogLens on `tests/fixtures/sample.log` (requires `ANTHROPIC_API_KEY`)
 
 ## Course Requirements Tracking
 
 - [x] **Project memory** — this file
-- [ ] **Spec with teeth** — acceptance criteria before each feature
-- [ ] **Test-first** — tests committed before implementation
-- [ ] **Scoped rules** — ruff config in `pyproject.toml`
-- [ ] **Iterative refinement** — prompt/output changes logged in `CHANGELOG.md`
+- [x] **Spec with teeth** — acceptance criteria before each feature
+- [x] **Test-first** — tests committed before implementation
+- [x] **Scoped rules** — ruff config in `pyproject.toml`
+- [x] **Iterative refinement** — prompt/output changes logged in `CHANGELOG.md`
 
 Presentation: Day 14, Wed May 6. Rubric grades workflow quality, not code complexity.
