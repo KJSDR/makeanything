@@ -44,7 +44,7 @@ Warnings:     23
 - [x] **Spec with teeth** — each feature has structured acceptance criteria with specific pass/fail conditions before implementation begins.
 - [x] **Test-first** — tests are written and committed before the corresponding implementation. Note: parser and formatter specs/tests were written retroactively after initial prototyping; enforced correctly from summarizer onward.
 - [x] **Scoped rules** — ruff configured in `pyproject.toml` with E, F, I rule sets.
-- [x] **Iterative refinement** — prompt decisions, model choice, and spec changes documented in `CHANGELOG.md`.
+- [ ] **Iterative refinement** — prompt decisions, model choice, and spec changes documented in `CHANGELOG.md`. Live refinement cycle (run → observe → tune → log before/after) still in progress.
 
 ## Tech Stack
 

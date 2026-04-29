@@ -45,6 +45,6 @@ Data flows `parser.py → summarizer.py → formatter.py`. CLI wires them togeth
 - [x] **Spec with teeth** — acceptance criteria before each feature
 - [x] **Test-first** — tests committed before implementation
 - [x] **Scoped rules** — ruff config in `pyproject.toml`
-- [x] **Iterative refinement** — prompt/output changes logged in `CHANGELOG.md`
+- [ ] **Iterative refinement** — live run → observe → tune → log before/after still pending
 
 Presentation: Day 14, Wed May 6. Rubric grades workflow quality, not code complexity.
