@@ -2,6 +2,23 @@
 
 ## [Unreleased]
 
+### Workflow note: test-first enforcement
+
+Specs and tests for `parser` and `formatter` were written retroactively after initial prototyping (commits `98d9ff4`, `51b0a58`). Test-first workflow was enforced from `summarizer` onward — spec committed before tests, tests committed before implementation. Going forward all features follow this order.
+
+---
+
+### Spec change: `--since` flag uses absolute timestamp instead of relative duration
+
+**Original proposal:** `--since 1h` (relative, e.g. "last hour")
+
+**Implementation:** `--since "2024-01-15 09:10:00"` (absolute timestamp)
+
+**Why:** Absolute timestamps match the format already present in log files — no parsing of duration strings, no ambiguity about what "now" means when processing a historical log. Simpler implementation, more precise filtering.
+
+---
+
+
 ### Prompt: Structured JSON output enforced in prompt (commit 39006d5)
 
 **Decision:** Prompt instructs Claude to return only valid JSON with keys `root_cause` (string) and `recommendations` (list). Ends with "Return only valid JSON, no markdown."

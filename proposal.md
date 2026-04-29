@@ -41,10 +41,10 @@ Warnings:     23
 ## Requirements Checklist
 
 - [x] **Project memory** — `CLAUDE.md` with project context, scoped instructions, and custom commands for common dev tasks (run tests, lint, summarize a sample log).
-- [ ] **Spec with teeth** — each feature has structured acceptance criteria with specific pass/fail conditions before implementation begins.
-- [ ] **Test-first** — tests are written and committed before the corresponding implementation. Commit history will show this ordering.
-- [ ] **Scoped rules** — linting and style conventions enforced via config (e.g. ESLint or Ruff depending on language choice), with rules tailored to this project's conventions.
-- [ ] **Iterative refinement** — v1 ships basic error extraction; v2 improves output quality based on testing against real log samples. Refinement decisions documented in `CHANGELOG.md`. (Could change depending what arrises during building)
+- [x] **Spec with teeth** — each feature has structured acceptance criteria with specific pass/fail conditions before implementation begins.
+- [x] **Test-first** — tests are written and committed before the corresponding implementation. Note: parser and formatter specs/tests were written retroactively after initial prototyping; enforced correctly from summarizer onward.
+- [x] **Scoped rules** — ruff configured in `pyproject.toml` with E, F, I rule sets.
+- [x] **Iterative refinement** — prompt decisions, model choice, and spec changes documented in `CHANGELOG.md`.
 
 ## Tech Stack
 
