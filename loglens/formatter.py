@@ -1,3 +1,6 @@
+from collections import Counter
+
+
 def format_summary(summary: dict) -> str:
     tr = summary["time_range"]
     lines = [
@@ -9,8 +12,10 @@ def format_summary(summary: dict) -> str:
     ]
 
     if summary["errors"]:
+        error_counts = Counter(summary["errors"])
+        top = error_counts.most_common(3)
         lines += [f"Top errors ({len(summary['errors'])} total):"]
-        lines += [f"  - {e}" for e in summary["errors"][:3]]
+        lines += [f"  - {msg} (×{count})" if count > 1 else f"  - {msg}" for msg, count in top]
         lines.append("")
 
     lines.append(f"Root cause: {summary['root_cause']}")

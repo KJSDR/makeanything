@@ -45,6 +45,16 @@ Specs and tests for `parser` and `formatter` were written retroactively after in
 
 ---
 
+### Refinement: Deduplicate top errors with occurrence counts (iterative refinement #2)
+
+**Before:** `Top errors (6 total):` listed same message three times — "Database connection timeout after 30s" × 3 with no count shown.
+
+**After:** `formatter.py` uses `Counter.most_common(3)` on error list. Duplicate entries collapse to one line with `(×N)` suffix. Unique errors display unchanged.
+
+**Why:** Repeated errors obscured variety. Top-3 of 6 errors were identical — user got no signal about second and third distinct error types.
+
+---
+
 ### Refinement: Strip markdown fences before JSON parse (iterative refinement #1)
 
 **Before:** Model returned ` ```json\n{...}\n``` ` despite "Return only valid JSON, no markdown" in prompt. `json.loads` raised, fallback set `root_cause` to the raw fenced string. Output showed ` ```json ` block in terminal.

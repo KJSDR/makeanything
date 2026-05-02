@@ -51,6 +51,17 @@ def test_no_rag_hit_no_notice():
     assert "[RAG]" not in out
 
 
+def test_duplicate_errors_show_count():
+    out = format_summary(_summary(errors=["DB timeout", "DB timeout", "DB timeout"]))
+    assert "×3" in out
+    assert "DB timeout" in out
+
+
+def test_unique_errors_no_count():
+    out = format_summary(_summary(errors=["DB timeout", "OOM"]))
+    assert "×" not in out
+
+
 def test_empty_errors_omits_section():
     out = format_summary(_summary(errors=[]))
     assert "Top errors" not in out
