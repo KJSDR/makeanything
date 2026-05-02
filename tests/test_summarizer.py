@@ -101,6 +101,17 @@ def test_malformed_json_fallback(monkeypatch):
     assert result["recommendations"] == []
 
 
+def test_fenced_json_parsed(monkeypatch):
+    monkeypatch.setattr("loglens.summarizer.rag.find_similar", lambda _: None)
+    monkeypatch.setattr("loglens.summarizer.rag.save", lambda *_: None)
+    fenced = f"```json\n{json.dumps(AI_RESPONSE)}\n```"
+    client = _mock_client(fenced)
+    monkeypatch.setattr("loglens.summarizer.anthropic.Anthropic", lambda: client)
+    result = summarize(EVENTS)
+    assert result["root_cause"] == "Connection pool exhausted"
+    assert result["recommendations"] == ["Increase pool size"]
+
+
 def test_no_errors_events(monkeypatch):
     monkeypatch.setattr("loglens.summarizer.rag.find_similar", lambda _: None)
     monkeypatch.setattr("loglens.summarizer.rag.save", lambda *_: None)

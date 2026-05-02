@@ -42,10 +42,14 @@ Return only valid JSON, no markdown."""
         messages=[{"role": "user", "content": prompt}],
     )
 
+    raw = msg.content[0].text.strip()
+    if raw.startswith("```"):
+        raw = raw.split("\n", 1)[1] if "\n" in raw else raw[3:]
+        raw = raw.rsplit("```", 1)[0].strip()
     try:
-        ai = json.loads(msg.content[0].text)
+        ai = json.loads(raw)
     except Exception:
-        ai = {"root_cause": msg.content[0].text, "recommendations": []}
+        ai = {"root_cause": raw, "recommendations": []}
 
     result = {
         "counts": dict(counts),

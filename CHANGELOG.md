@@ -45,6 +45,16 @@ Specs and tests for `parser` and `formatter` were written retroactively after in
 
 ---
 
+### Refinement: Strip markdown fences before JSON parse (iterative refinement #1)
+
+**Before:** Model returned ` ```json\n{...}\n``` ` despite "Return only valid JSON, no markdown" in prompt. `json.loads` raised, fallback set `root_cause` to the raw fenced string. Output showed ` ```json ` block in terminal.
+
+**After:** `summarizer.py` strips leading ` ``` ` / ` ```json ` and trailing ` ``` ` before `json.loads`. Fenced responses now parse correctly. Malformed non-JSON still falls back to raw text as before.
+
+**Why:** Haiku ignores the no-markdown instruction ~100% of the time on this prompt. Stripping fences in the parser is more reliable than prompt-only enforcement.
+
+---
+
 ### Feature: RAG context injection (commit 39006d5)
 
 **Decision:** If a past incident with a similar dominant error exists in `~/.loglens/past_analyses.json`, it is injected into the prompt as additional context before the log data.
