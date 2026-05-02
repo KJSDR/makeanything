@@ -45,6 +45,16 @@ Specs and tests for `parser` and `formatter` were written retroactively after in
 
 ---
 
+### Refinement: RAG tag shows matched incident name (iterative refinement #3)
+
+**Before:** `[RAG] Similar past incident found — used as context in analysis.` — generic, no info on which past incident matched.
+
+**After:** `[RAG] Past incident matched: "Database connection timeout after 30s" — used as context.` — shows the dominant error from the matched past incident.
+
+**Why:** Generic tag gave no signal. User couldn't tell if the RAG hit was relevant or a false positive. Showing the matched error string lets the user judge quality of the retrieval.
+
+---
+
 ### Refinement: Deduplicate top errors with occurrence counts (iterative refinement #2)
 
 **Before:** `Top errors (6 total):` listed same message three times — "Database connection timeout after 30s" × 3 with no count shown.

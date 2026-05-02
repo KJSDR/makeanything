@@ -46,6 +46,12 @@ def test_rag_hit_shows_notice():
     assert "[RAG]" in out
 
 
+def test_rag_hit_shows_incident_name():
+    out = format_summary(_summary(rag_hit=True, rag_dominant_error="DB timeout"))
+    assert "DB timeout" in out
+    assert "Past incident matched" in out
+
+
 def test_no_rag_hit_no_notice():
     out = format_summary(_summary(rag_hit=False))
     assert "[RAG]" not in out

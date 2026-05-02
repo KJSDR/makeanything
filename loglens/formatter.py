@@ -25,6 +25,8 @@ def format_summary(summary: dict) -> str:
         lines += [f"  • {r}" for r in summary["recommendations"]]
 
     if summary.get("rag_hit"):
-        lines += ["", "[RAG] Similar past incident found — used as context in analysis."]
+        incident = summary.get("rag_dominant_error")
+        tag = f'[RAG] Past incident matched: "{incident}" — used as context.' if incident else "[RAG] Similar past incident found — used as context in analysis."
+        lines += ["", tag]
 
     return "\n".join(lines)

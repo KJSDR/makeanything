@@ -59,6 +59,7 @@ Return only valid JSON, no markdown."""
         "root_cause": ai.get("root_cause", ""),
         "recommendations": ai.get("recommendations", []),
         "rag_hit": past is not None,
+        "rag_dominant_error": past["dominant_error"] if past else None,
     }
 
     if dominant_error:
