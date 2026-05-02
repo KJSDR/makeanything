@@ -38,12 +38,12 @@ log file → parser → rag lookup → Claude prompt + context → formatter →
 python3.12 -m venv .venv
 .venv/bin/pip install -e ".[dev]"
 
-# Set your API key
-export ANTHROPIC_API_KEY=sk-...
-
 # Run on the sample log
 .venv/bin/loglens summarize tests/fixtures/sample.log
 
 # Second run — RAG kicks in (similar errors recognized from first run)
 .venv/bin/loglens summarize tests/fixtures/sample.log
+
+# Remove RAG for demo
+rm ~/.loglens/past_analyses.json
 ```
