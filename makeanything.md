@@ -46,17 +46,17 @@ Commit a proposal document describing the problem you'll solve. Put it in a file
 
 Pick at least 5 of 7:
 
-- [ ] **Project memory** — `CLAUDE.md`, scoped instructions, custom commands.
-- [ ] **Spec with teeth** — quality gates and structured acceptance criteria.
-- [ ] **Test-first** — commit history shows tests before implementation.
+- [x] **Project memory** — `CLAUDE.md`, scoped instructions, custom commands.
+- [x] **Spec with teeth** — quality gates and structured acceptance criteria.
+- [x] **Test-first** — commit history shows tests before implementation.
 - [ ] **Complexity awareness** — different workflows for different task sizes.
-- [ ] **Protocol integration** — external tool servers used in real work.
-- [ ] **Scoped rules** — rules that enforce your project's conventions.
-- [ ] **Iterative refinement** — evidence of tuning based on output quality.
+- [x] **Protocol integration** — external tool servers used in real work.
+- [x] **Scoped rules** — rules that enforce your project's conventions.
+- [x] **Iterative refinement** — evidence of tuning based on output quality.
 
 #### Bonus
 
-- [ ] :star: Design and build a **custom protocol server** for your project's specific needs.
+- [x] :star: Design and build a **custom protocol server** for your project's specific needs.
 - [ ] :star: Use **parallel workers on branches** to speed up development.
 - [ ] :star: Create a **reusable project template** another student could clone and build with immediately.
 
