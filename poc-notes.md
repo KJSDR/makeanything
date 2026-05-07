@@ -47,3 +47,6 @@ python3.12 -m venv .venv
 # Remove RAG for demo
 rm ~/.loglens/past_analyses.json
 ```
+
+# Find Past at Runtime
+cat ~/.loglens/past_analyses.json
